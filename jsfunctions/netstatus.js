@@ -11,13 +11,12 @@
                               //alert("Form submitted successfully");
                              
                               var rel = $.parseJSON(resp);
-                              //var rel=new Array();
-                              //rel[0]=parseInt(resp[0]);
-                              //rel[1]=parseInt(resp[1]);
-                              //rel[2]=parseInt(resp[2]);
                               var series=chart.series[0];
                               console.log(resp);
                               series.addPoint([rel[0],rel[2]]);
+                              document.getElementById('tx').innerHTML=rel[0];
+                              document.getElementById('rx').innerHTML=rel[1];
+                              act=rel[0];
                               console.log(rel[0],rel[2]);
                               setTimeout(repeatAjax,5000); //After completion of request, time to redo it after a second
                             },
