@@ -3,18 +3,16 @@
                               
                        function tablestat(){
                           $.ajax({
-                            url: '../tabletest.php',
-                            type: 'GET',
+                            url: '../arrayfetch.php',
+                            type: 'GET',                           
                             
-                            complete: function(response, textStatus) {
-                            return alert("Hey: " + textStatus);
-                            },
                             success: function(resp) {
-                              alert("Form submitted successfully");   
-                              resp = resp.replace(/^"(.*)"$/, '$1');
+                              //alert("Form submitted successfully");   
+                              //var tempArray = $.parseJSON('<?php echo json_encode(resp); ?>');
+                              var rel = $.parseJSON(resp);
                               //document.write(resp);
-                              document.getElementById("tableholder").innerHTML=$(resp);
-                              //console.log(resp);                             
+                              //document.getElementById("tableholder").innerHTML=resp;
+                              console.log(rel[0]['address']);                             
                             },
                             error: function () {
                             alert("error");

@@ -16,8 +16,10 @@
                               series.addPoint([rel[0],rel[2]]);
                               document.getElementById('tx').innerHTML=rel[0];
                               document.getElementById('rx').innerHTML=rel[1];
+                              document.getElementById('active').innerHTML=rel[3];
+                              document.getElementById('bw').innerHTML=rel[4];
                               act=rel[0];
-                              console.log(rel[0],rel[2]);
+                              console.log(rel[3],rel[4]);
                               setTimeout(repeatAjax,5000); //After completion of request, time to redo it after a second
                             },
                             error: function () {
